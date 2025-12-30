@@ -43,7 +43,7 @@ export function useWalletAuth() {
   }, [connected, address])
 
   // Helper to get auth headers for API calls
-  const getAuthHeaders = () => {
+  const getAuthHeaders = (): Record<string, string> => {
     if (!address) return {}
     return {
       "x-wallet-address": address,
